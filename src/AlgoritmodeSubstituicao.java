@@ -1,19 +1,27 @@
+import java.util.LinkedList;
 
 public abstract class AlgoritmodeSubstituicao {
-protected int numerodefalhas;//num de falhas da página física
-protected int numerodeframes;//num de frames da página física
+protected int numfalhas;//num de falhas da página física
+protected int numquadros;//num de frames da página física
+LinkedList quadros;
 
 public AlgoritmodeSubstituicao(int numerodeframes){
 	if(numerodeframes <0)
 	{
 		throw new IllegalArgumentException();
 	}
-	this.numerodeframes=numerodeframes;
-	numerodefalhas=0;
+	this.numquadros=numquadros;
+	numfalhas=0;
 }
-public int getNumeroDeFalhas(){
-	return numerodefalhas;
+public int getPageFaultcont(){
+	return numfalhas;
 }
-public abstract void insert(int pageNumber);
-
+public abstract void inserir(String pageNumber);
+public void imprimirQuadro(){
+	System.out.print("Quadros");
+	for(int i=0;i<quadros.size();i++){
+		System.out.print(quadros.get(i)+ "");
+	}
+	System.out.println();
+}
 }
