@@ -24,4 +24,6 @@ public void imprimirQuadro(){
 	}
 	System.out.println();
 }
+
 }
+
