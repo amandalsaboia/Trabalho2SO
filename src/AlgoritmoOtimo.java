@@ -1,7 +1,10 @@
+import java.io.File;
 
-public abstract class AlgoritmoOtimo extends AlgoritmodeSubstituicao {
-	public AlgoritmoOtimo(int numerodeframes){
-		super(numerodeframes);
+public  class AlgoritmoOtimo{
+	private File arq;
+	public AlgoritmoOtimo(File arq){
+		this.arq=arq;
+		
 	}
 
 }

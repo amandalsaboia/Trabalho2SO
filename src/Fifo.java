@@ -1,8 +1,15 @@
+import java.io.File;
 
-public abstract class  Fifo extends AlgoritmodeSubstituicao {
+public class Fifo {
 	private static int insert=0;
-	public Fifo(int numerodeframes){
-		super(numerodeframes);
+	private File arq;
+	private int acertos=0,erros=0;
+	private int frameinicial,framefinal;
+	public Fifo(File arq,int min,int max){
+		this.arq=arq;
+		this.frameinicial=min;
+		this.framefinal=max;
+		
 	}
 
 }
