@@ -6,7 +6,7 @@ import javax.swing.JFrame;
 public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		  JFileChooser chooser = new JFileChooser();
+		/*  JFileChooser chooser = new JFileChooser();
 		    chooser.setCurrentDirectory(new File("."));
 
 		    chooser.setFileFilter(new javax.swing.filechooser.FileFilter() {
@@ -24,7 +24,7 @@ public class Main {
 		    if (r == JFileChooser.APPROVE_OPTION) {
 		      String name = chooser.getSelectedFile().getName();
 		      System.out.println(name);
-		    }
+		    }*/
 		  }
 	}
 
