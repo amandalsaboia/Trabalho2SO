@@ -9,6 +9,19 @@ public class ResultadoTeste {
   private int numeroAcertosMRU;
   private int numeroAcertosOtimo;
 
+  public ResultadoTeste(){}
+
+  public ResultadoTeste(int numeroFrames, int numeroAcertosFIFO, int numeroAcertosSegundaChance, int numeroAcertosNUR, int numeroAcertosMRU, int numeroAcertosOtimo) {
+    this.numeroFrames = numeroFrames;
+    this.numeroAcertosFIFO = numeroAcertosFIFO;
+    this.numeroAcertosSegundaChance = numeroAcertosSegundaChance;
+    this.numeroAcertosNUR = numeroAcertosNUR;
+    this.numeroAcertosMRU = numeroAcertosMRU;
+    this.numeroAcertosOtimo = numeroAcertosOtimo;
+  }
+  
+  
+  
   public int getNumeroFrames() {
     return numeroFrames;
   }

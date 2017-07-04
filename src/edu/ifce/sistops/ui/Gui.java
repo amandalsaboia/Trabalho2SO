@@ -5,6 +5,7 @@
  */
 package edu.ifce.sistops.ui;
 
+import edu.ifce.sistops.controller.CoisaController;
 import javax.swing.JFileChooser;
 
 /**
@@ -14,6 +15,7 @@ import javax.swing.JFileChooser;
 public class Gui extends javax.swing.JPanel {
 
   private final TabelaResultadosModel resultadosModel = new TabelaResultadosModel();
+  private final CoisaController controller = new CoisaController();
 
   /**
    * Creates new form Gui
@@ -165,7 +167,29 @@ public class Gui extends javax.swing.JPanel {
   }// </editor-fold>//GEN-END:initComponents
 
   private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-    // TODO add your handling code here:
+    
+    String nomeArquivo = jTextField1.getText();
+    int q1 = Integer.parseInt(jTextField2.getText());
+    int q2 = Integer.parseInt(jTextField3.getText());
+    int bitR = Integer.parseInt(jTextField4.getText());
+    
+    jButton1.setEnabled(false);
+    jButton2.setEnabled(false);
+    jTextField1.setEnabled(false);
+    jTextField2.setEnabled(false);
+    jTextField3.setEnabled(false);
+    jTextField4.setEnabled(false);
+    
+    resultadosModel.setListResultados(controller.iniciarTeste(nomeArquivo,q1,q2,bitR));
+    // TODO falta desenhar o gráfico
+    // http://www.java2s.com/Code/Java/Chart/JFreeChartNormalDistributionDemo.htm
+    
+    jButton1.setEnabled(true);
+    jButton2.setEnabled(true);
+    jTextField1.setEnabled(true);
+    jTextField2.setEnabled(true);
+    jTextField3.setEnabled(true);
+    jTextField4.setEnabled(true);
     
   }//GEN-LAST:event_jButton2ActionPerformed
 
