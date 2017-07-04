@@ -1,16 +1,16 @@
+package edu.ifce.sistops.alg;
 import java.io.File;
-import java.util.LinkedList;
 
-public  class SecondChance {
-	
+public class Fifo {
 	private static int insert=0;
 	private File arq;
 	private int acertos=0,erros=0;
 	private int frameinicial,framefinal;
-	public SecondChance(File arq,int min,int max){
+	public Fifo(File arq,int min,int max){
 		this.arq=arq;
 		this.frameinicial=min;
 		this.framefinal=max;
 		
 	}
+
 }
