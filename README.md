@@ -8,4 +8,4 @@
 
 ## Procedimento
 
-- *tbd*
+- cada algoritmo recebe o *arquivo de memória* e a quantidade de frames. 
