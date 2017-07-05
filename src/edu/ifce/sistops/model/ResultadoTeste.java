@@ -18,7 +18,9 @@ public class ResultadoTeste {
     this.numeroAcertosNUR = numeroAcertosNUR;
     this.numeroAcertosMRU = numeroAcertosMRU;
     this.numeroAcertosOtimo = numeroAcertosOtimo;
-  }
+  } 
+  
+  
   
   
   

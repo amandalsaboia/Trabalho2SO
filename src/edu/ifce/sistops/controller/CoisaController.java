@@ -2,13 +2,15 @@ package edu.ifce.sistops.controller;
 
 import edu.ifce.sistops.model.ResultadoTeste;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class CoisaController {
 
   public List<ResultadoTeste> iniciarTeste(String nomeArquivo, int q1, int q2, int bitR) {
     // TODO trocar pelo código real do uso dos algoritmos
-    List<ResultadoTeste> list = new ArrayList<>();
+  //  List<ResultadoTeste> list = new ArrayList<>();
+	List<ResultadoTeste> list= new LinkedList <> ();
     list.add(new ResultadoTeste(1,10,22,34,65,23));
     list.add(new ResultadoTeste(2,30,42,34,65,33));
     list.add(new ResultadoTeste(3,50,72,44,65,43));

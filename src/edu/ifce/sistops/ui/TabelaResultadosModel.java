@@ -13,7 +13,7 @@ public class TabelaResultadosModel extends AbstractTableModel {
     "Acertos Segunda Chance",
     "Acertos NUR",
     "Acertos MRU",
-    "Acertos Ã“timo"
+    "Acertos òtimo"
   };
   
   private List<ResultadoTeste> listResultados = new ArrayList<>(); 
