@@ -6,10 +6,14 @@
 package edu.ifce.sistops.ui;
 
 import edu.ifce.sistops.controller.CoisaController;
+
+import java.io.IOException;
+
 import javax.swing.JFileChooser;
 
 
 public class Gui extends javax.swing.JPanel {
+    private int q1=0,q2=0,bitR=0;
 
   private final TabelaResultadosModel resultadosModel = new TabelaResultadosModel();
   private final CoisaController controller = new CoisaController();
@@ -45,6 +49,7 @@ public class Gui extends javax.swing.JPanel {
     jScrollPane1 = new javax.swing.JScrollPane();
     jTable1 = new javax.swing.JTable();
 
+
     jLabel1.setText("Arquivo");
 
     jButton1.setText("Buscar");
@@ -57,7 +62,7 @@ public class Gui extends javax.swing.JPanel {
     jLabel2.setText("Q1");
 
     jTextField2.setText("");
-
+   
     jLabel3.setText("Q2");
 
     jTextField3.setText("");
@@ -68,8 +73,17 @@ public class Gui extends javax.swing.JPanel {
 
     jButton2.setText("Iniciar");
     jButton2.addActionListener(new java.awt.event.ActionListener() {
-      public void actionPerformed(java.awt.event.ActionEvent evt) {
+    	/*public void actionPerformed(java.awt.event.ActionEvent evt) {
         jButton2ActionPerformed(evt);
+      }
+    });*/
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        try {
+			jButton2ActionPerformed(evt);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
       }
     });
 
@@ -84,7 +98,7 @@ public class Gui extends javax.swing.JPanel {
       .addGap(0, 439, Short.MAX_VALUE)
     );
 
-    jTabbedPane1.addTab("Gr√°fico", jPanel1);
+    jTabbedPane1.addTab("Gr·fico", jPanel1);
 
     jTable1.setModel(resultadosModel);
     jScrollPane1.setViewportView(jTable1);
@@ -163,12 +177,12 @@ public class Gui extends javax.swing.JPanel {
     );
   }// </editor-fold>//GEN-END:initComponents
 
-  private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+  private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) throws IOException {//GEN-FIRST:event_jButton2ActionPerformed
     
     String nomeArquivo = jTextField1.getText();
-    int q1 = Integer.parseInt(jTextField2.getText());
-    int q2 = Integer.parseInt(jTextField3.getText());
-    int bitR = Integer.parseInt(jTextField4.getText());
+     q1 = Integer.parseInt(jTextField2.getText());
+     q2 = Integer.parseInt(jTextField3.getText());
+     bitR = Integer.parseInt(jTextField4.getText());
     
     jButton1.setEnabled(false);
     jButton2.setEnabled(false);

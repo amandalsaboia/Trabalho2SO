@@ -2,13 +2,18 @@ package edu.ifce.sistops.model;
 
 public class ResultadoTeste {
   
-  private int numeroFrames;
-  //private int numeroAcertosFIFO;
-  private String numeroAcertosFIFO;
+ /* private int numeroFrames;
+  private int numeroAcertosFIFO;
   private int numeroAcertosSegundaChance;
   private int numeroAcertosNUR;
   private int numeroAcertosMRU;
-  private int numeroAcertosOtimo;
+  private int numeroAcertosOtimo; */
+	private Object numeroFrames;
+	private Object numeroAcertosFIFO;
+    private Object numeroAcertosSegundaChance;
+    private Object numeroAcertosNUR;
+	private Object numeroAcertosMRU;
+    private Object numeroAcertosOtimo;
 
   public ResultadoTeste(){}
 
@@ -21,7 +26,7 @@ public class ResultadoTeste {
     this.numeroAcertosOtimo = numeroAcertosOtimo;
   } */
   
-  public ResultadoTeste(int numeroFrames, String numeroAcertosFIFO, int numeroAcertosSegundaChance, int numeroAcertosNUR, int numeroAcertosMRU, int numeroAcertosOtimo) {
+  public ResultadoTeste(int numeroFrames, Object numeroAcertosFIFO, Object numeroAcertosSegundaChance, Object numeroAcertosNUR, Object numeroAcertosMRU, Object numeroAcertosOtimo) {
 	    this.numeroFrames = numeroFrames;
 	    this.numeroAcertosFIFO = numeroAcertosFIFO;
 	    this.numeroAcertosSegundaChance = numeroAcertosSegundaChance;
@@ -32,24 +37,24 @@ public class ResultadoTeste {
   
   
   
-  public int getNumeroFrames() {
+  public Object getNumeroFrames() {
     return numeroFrames;
   }
 
-  public void setNumeroFrames(int numeroFrames) {
+  public void setNumeroFrames(Object numeroFrames) {
     this.numeroFrames = numeroFrames;
   }
 
 /*  public int getNumeroAcertosFIFO() {
 	    return numeroAcertosFIFO;
 	  }*/
-  public String getNumeroAcertosFIFO() {
+  public int getNumeroAcertosFIFO() {
 	    return numeroAcertosFIFO;
 	  }
  /* public void setNumeroAcertosFIFO(int numeroAcertosFIFO) {
     this.numeroAcertosFIFO = numeroAcertosFIFO;
   }*/
-  public void setNumeroAcertosFIFO(String numeroAcertosFIFO) {
+  public void setNumeroAcertosFIFO(int numeroAcertosFIFO) {
 	    this.numeroAcertosFIFO = numeroAcertosFIFO;}
 
   public int getNumeroAcertosSegundaChance() {

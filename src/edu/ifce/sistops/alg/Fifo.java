@@ -1,7 +1,10 @@
 package edu.ifce.sistops.alg;
-import java.io.File;
+import java.io.IOException;
+//import java.io.File;
 import java.util.LinkedList;
 import java.util.List;
+
+//import FileUtil;
 
 public class Fifo {
 	private static int insert=0;
@@ -26,9 +29,18 @@ public class Fifo {
     	  elementos--;
     	  this.listafifo.remove(0);
       }
-      public void insereFifo(String elem)
+      public void imprime()
       {
-          String aux=elem.substring(0, elem.length()-1);
+          int i=0;
+          for(i=0;i<this.listafifo.size();i++)
+          {
+              System.out.printf(" %s ",this.listafifo.get(i));
+          }
+      }
+      public void insereFifo(String elem) throws IOException
+      {
+          //String aux=elem.substring(0, elem.length()-1);
+    	  String aux = FileUtil.getString(arq);
 
           String strRead;
           StringBuilder sb = new StringBuilder();
@@ -90,7 +102,12 @@ public class Fifo {
              this.frameinicial++;
           }
           return this.lis;
-      } 
+      }
+	public int getNumeroAcertosFIFO() {
+		// TODO Auto-generated method stub
+		return acertos;
+	}
+	
 
 
 }

@@ -11,11 +11,14 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class CoisaController {
+	private int ac=0;
+	List<ResultadoTeste> list = new LinkedList<>();
 
 	public List<ResultadoTeste> iniciarTeste(String nomeArquivo, int q1, int q2, int bitR) throws IOException {
 		// TODO trocar pelo código real do uso dos algoritmos
 		// List<ResultadoTeste> list = new ArrayList<>();
-		List<ResultadoTeste> list = new LinkedList<>();
+//		List<ResultadoTeste> list = new LinkedList<>();
+		
 		/*
 		list.add(new ResultadoTeste(1, 10, 22, 34, 65, 23));
 		list.add(new ResultadoTeste(2, 30, 42, 34, 65, 33));
@@ -31,7 +34,7 @@ public class CoisaController {
 		for (; q1 <= q2; q1++) {
             String content = new String(Files.readAllBytes(Paths.get("Gui.java")));
             String aux[]=content.split("-");
-            ResultadoTeste r = new ResultadoTeste(content,q1,q2,0);
+            ResultadoTeste r = new ResultadoTeste();
 			// http://www.adam-bien.com/roller/abien/entry/java_8_reading_a_file
 			r.setNumeroFrames(q1);
 			// TODO rodar algoritmos 
@@ -40,11 +43,13 @@ public class CoisaController {
 			//a.executar();
 		 	 t.RodaAlgoritmoFifo(aux);
 			// r.setNumeroAcertosFIFO(a.getAcertos());
-		 	 r.setNumeroAcertosFIFO(t.insereFifo(content));
-			 list.add(r);
+		 	 r.setNumeroAcertosFIFO(t.getNumeroAcertosFIFO());
+		 	
+			 list.add(new ResultadoTeste(q1,t,0,0,0,0));
+			 
 		}
 
 		return list;
 	}
-
+        
 }
