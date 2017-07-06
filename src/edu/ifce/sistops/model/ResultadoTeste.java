@@ -3,7 +3,8 @@ package edu.ifce.sistops.model;
 public class ResultadoTeste {
   
   private int numeroFrames;
-  private int numeroAcertosFIFO;
+  //private int numeroAcertosFIFO;
+  private String numeroAcertosFIFO;
   private int numeroAcertosSegundaChance;
   private int numeroAcertosNUR;
   private int numeroAcertosMRU;
@@ -11,16 +12,23 @@ public class ResultadoTeste {
 
   public ResultadoTeste(){}
 
-  public ResultadoTeste(int numeroFrames, int numeroAcertosFIFO, int numeroAcertosSegundaChance, int numeroAcertosNUR, int numeroAcertosMRU, int numeroAcertosOtimo) {
+ /* public ResultadoTeste(int numeroFrames, int numeroAcertosFIFO, int numeroAcertosSegundaChance, int numeroAcertosNUR, int numeroAcertosMRU, int numeroAcertosOtimo) {
     this.numeroFrames = numeroFrames;
     this.numeroAcertosFIFO = numeroAcertosFIFO;
     this.numeroAcertosSegundaChance = numeroAcertosSegundaChance;
     this.numeroAcertosNUR = numeroAcertosNUR;
     this.numeroAcertosMRU = numeroAcertosMRU;
     this.numeroAcertosOtimo = numeroAcertosOtimo;
-  } 
+  } */
   
-  
+  public ResultadoTeste(int numeroFrames, String numeroAcertosFIFO, int numeroAcertosSegundaChance, int numeroAcertosNUR, int numeroAcertosMRU, int numeroAcertosOtimo) {
+	    this.numeroFrames = numeroFrames;
+	    this.numeroAcertosFIFO = numeroAcertosFIFO;
+	    this.numeroAcertosSegundaChance = numeroAcertosSegundaChance;
+	    this.numeroAcertosNUR = numeroAcertosNUR;
+	    this.numeroAcertosMRU = numeroAcertosMRU;
+	    this.numeroAcertosOtimo = numeroAcertosOtimo;
+	  }
   
   
   
@@ -32,13 +40,17 @@ public class ResultadoTeste {
     this.numeroFrames = numeroFrames;
   }
 
-  public int getNumeroAcertosFIFO() {
-    return numeroAcertosFIFO;
-  }
-
-  public void setNumeroAcertosFIFO(int numeroAcertosFIFO) {
+/*  public int getNumeroAcertosFIFO() {
+	    return numeroAcertosFIFO;
+	  }*/
+  public String getNumeroAcertosFIFO() {
+	    return numeroAcertosFIFO;
+	  }
+ /* public void setNumeroAcertosFIFO(int numeroAcertosFIFO) {
     this.numeroAcertosFIFO = numeroAcertosFIFO;
-  }
+  }*/
+  public void setNumeroAcertosFIFO(String numeroAcertosFIFO) {
+	    this.numeroAcertosFIFO = numeroAcertosFIFO;}
 
   public int getNumeroAcertosSegundaChance() {
     return numeroAcertosSegundaChance;

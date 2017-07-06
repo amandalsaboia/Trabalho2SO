@@ -8,10 +8,7 @@ package edu.ifce.sistops.ui;
 import edu.ifce.sistops.controller.CoisaController;
 import javax.swing.JFileChooser;
 
-/**
- *
- * @author sombriks
- */
+
 public class Gui extends javax.swing.JPanel {
 
   private final TabelaResultadosModel resultadosModel = new TabelaResultadosModel();
@@ -59,15 +56,15 @@ public class Gui extends javax.swing.JPanel {
 
     jLabel2.setText("Q1");
 
-    jTextField2.setText("10");
+    jTextField2.setText("");
 
     jLabel3.setText("Q2");
 
-    jTextField3.setText("100");
+    jTextField3.setText("");
 
     jLabel4.setText("Bit R");
 
-    jTextField4.setText("5");
+    jTextField4.setText("");
 
     jButton2.setText("Iniciar");
     jButton2.addActionListener(new java.awt.event.ActionListener() {

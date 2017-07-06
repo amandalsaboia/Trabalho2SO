@@ -5,12 +5,12 @@ import java.util.List;
 
 public class Fifo {
 	private static int insert=0;
-	private File arq;
+	private String arq;
 	private int acertos=0,erros=0,elementos;
 	private int frameinicial,framefinal;
 	private LinkedList<String> listafifo=new LinkedList <>();
-	private List<String> lis =new LinkedList <>(); //lista de acertos
-	public Fifo(File arq,int frameinicial,int framefinal){
+	private List<Integer> lis =new LinkedList <>(); //lista de acertos
+	public Fifo(String arq,int frameinicial,int framefinal){
 		this.arq=arq;
 		this.frameinicial=frameinicial;
 		this.framefinal=framefinal;
@@ -82,7 +82,7 @@ public class Fifo {
           return this.acertos;
                 
       }
-     public List<Number> repeticao(String s[])
+     public List<Integer> repeticao(String s[])
       {
           while(this.frameinicial<=this.framefinal)
           {
