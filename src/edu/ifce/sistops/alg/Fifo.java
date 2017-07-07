@@ -1,113 +1,113 @@
 package edu.ifce.sistops.alg;
-import java.io.IOException;
-//import java.io.File;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-//import FileUtil;
+import edu.ifce.sistops.alg.AlgoritmoSwap;
+import edu.ifce.sistops.model.*;
 
-public class Fifo {
-	private static int insert=0;
-	private String arq;
-	private int acertos=0,erros=0,elementos;
-	private int frameinicial,framefinal;
-	private LinkedList<String> listafifo=new LinkedList <>();
-	private List<Integer> lis =new LinkedList <>(); //lista de acertos
-	public Fifo(String arq,int frameinicial,int framefinal){
-		this.arq=arq;
-		this.frameinicial=frameinicial;
-		this.framefinal=framefinal;
-		this.acertos=0;
-		this.elementos=0;
-		
-	}
-	public void insere(String ele) {
-	    this.listafifo.add(ele);
-	    elementos++;
-	  }
-      public void remove (){
-    	  elementos--;
-    	  this.listafifo.remove(0);
-      }
-      public void imprime()
-      {
-          int i=0;
-          for(i=0;i<this.listafifo.size();i++)
-          {
-              System.out.printf(" %s ",this.listafifo.get(i));
-          }
-      }
-      public void insereFifo(String elem) throws IOException
-      {
-          //String aux=elem.substring(0, elem.length()-1);
-    	  String aux = FileUtil.getString(arq);
+public class FIFO {
 
-          String strRead;
-          StringBuilder sb = new StringBuilder();
-          sb.append(aux);
-          sb.append('R');
-          strRead = sb.toString();
+private List<String> listaFifo = new ArrayList<String>();
+private List<Number> listaAcertos = new ArrayList<Number>();
+// private List<String> memoria = new ArrayList<String>();
+//private List<Integer> ListAcertos = new ArrayList<Integer>();
+private int tamanhoIni;
+private int tamanhoFin;
+private int acertos;
+private int elementos;
+public FIFO(int tamanhoIni,int tamanhoFin,ArrayList<String> arq)
+{
+    this.tamanhoIni=tamanhoIni;
+    this.tamanhoFin=tamanhoFin;
+    this.listaFifo=arq;
+    this.elementos=0;
+    this.acertos=0;
+}
+public void insere(String t) {
+  this.listaFifo.add(t);
+  elementos++;
+}
+
+public void remove() {
+  elementos--;
+  //System.out.printf("\nremovido %s\n", this.listaFifo.get(0));
+  this.listaFifo.remove(0);
+  
+}
+public void imprime()
+  {
+      int i=0;
+      for(i=0;i<this.listaFifo.size();i++)
+      {
+          System.out.printf(" %s ",this.listaFifo.get(i));
+      }
+  }
+
+
+public void insereFifo(String elem)
+{
+    String aux=elem.substring(0, elem.length()-1);
+
+    String strRead;
+    StringBuilder sb = new StringBuilder();
+    sb.append(aux);
+    sb.append('R');
+    strRead = sb.toString();
+    
+    String strWrite;
+    StringBuilder sb2 = new StringBuilder();
+    sb2.append(aux);
+    sb2.append('W');
+    strWrite = sb2.toString();
+    
+    if((this.listaFifo.contains(strWrite)||this.listaFifo.contains(strRead))==true)
+    {
+        this.acertos++;
+    }
+    else
+    {
+        if(this.elementos<this.tamanhoIni)
+        {
+            this.insere(elem);
+        }
+        else{
+            this.remove();
+            this.insere(elem);
+            
+        }
+    }
+    
+}
+
+public int RodaAlgoritmoFifo(String s[])
+{
+    this.acertos=0;
+    this.elementos=0;
+    //this.memoria.clear();
+    this.listaFifo.clear();
+    int i=s.length-1;
+    int j;
+
+        for(j=0;j<=i;j++)
+        {
+            //System.out.println("\n");
+            this.insereFifo(s[j]);
+            //this.imprime();
+            //System.out.println("\n");
+        }
+        
+    return this.acertos;
           
-          String strWrite;
-          StringBuilder sb2 = new StringBuilder();
-          sb2.append(aux);
-          sb2.append('W');
-          strWrite = sb2.toString();
-          
-          if((this.listafifo.contains(strWrite)||this.listafifo.contains(strRead))==true)
-          {
-              this.acertos++;
-          }
-          else
-        	 
-          {
-              if(this.elementos<this.frameinicial)
-              {
-                  this.insere(elem);
-              }
-              else{
-                  this.remove();
-                  this.insere(elem);
-                  
-              }
-          }
-          
-      }
-
-      public int RodaAlgoritmoFifo(String s[])
-      {
-          this.acertos=0;
-          this.elementos=0;
-          //this.memoria.clear();
-          this.listafifo.clear();
-          int i=s.length-1;
-          int j;
-
-              for(j=0;j<=i;j++)
-              {
-                  //System.out.println("\n");
-                  this.insereFifo(s[j]);
-                  //this.imprime();
-                  //System.out.println("\n");
-              }
-              
-          return this.acertos;
-                
-      }
-     public List<Integer> repeticao(String s[])
-      {
-          while(this.frameinicial<=this.framefinal)
-          {
-             this.lis.add(this.RodaAlgoritmoFifo(s));
-             this.frameinicial++;
-          }
-          return this.lis;
-      }
-	public int getNumeroAcertosFIFO() {
-		// TODO Auto-generated method stub
-		return acertos;
-	}
-	
-
+}
+public List<Number> repeticao(String s[])
+{
+    while(this.tamanhoIni<=this.tamanhoFin)
+    {
+       this.listaAcertos.add(this.RodaAlgoritmoFifo(s));
+       this.tamanhoIni++;
+    }
+    return this.listaAcertos;
+}
 
 }

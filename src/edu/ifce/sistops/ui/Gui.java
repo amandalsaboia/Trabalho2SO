@@ -179,7 +179,7 @@ public class Gui extends javax.swing.JPanel {
 
   private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) throws IOException {//GEN-FIRST:event_jButton2ActionPerformed
     
-    String nomeArquivo = jTextField1.getText();
+     String nomeArquivo = jTextField1.getText();
      q1 = Integer.parseInt(jTextField2.getText());
      q2 = Integer.parseInt(jTextField3.getText());
      bitR = Integer.parseInt(jTextField4.getText());
